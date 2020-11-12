@@ -16,4 +16,4 @@ app.get("/", (req, res) => res.render("home", { events: JSON.stringify(events)})
 
 const server = app.listen(PORT, () => console.log(`Server running on http:localhost:${PORT}`));
 const io = socketIO(server);
-io.on("connection", socket => socketController);
+io.on("connection", socket => socketController(socket));
